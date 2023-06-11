@@ -47,7 +47,7 @@ export default Contacts;
 Contacts.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     })
