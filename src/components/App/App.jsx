@@ -15,7 +15,11 @@ class App extends Component {
     // localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     const contactsString = localStorage.getItem('contacts');
     const contacts = JSON.parse(contactsString);
-    this.setState({ contacts: contacts });
+    if (contacts === null) {
+      this.setState({ contacts: [] });
+    } else {
+      this.setState({ contacts: contacts });
+    }
   }
 
   componentDidUpdate() {
@@ -49,6 +53,7 @@ class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
+    console.log(contacts);
 
     return (
       <Container>
